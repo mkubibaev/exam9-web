@@ -35,8 +35,11 @@ const ContactFrom = props => {
                             />
                         </div>
                         <div className="photo-preview">
-                            <span>Photo preview:</span>
-                            <img src="" alt=""/>
+                            <p>Photo preview:</p>
+                            {props.photo
+                                ? <img src={props.photo} alt=""/>
+                                : null
+                            }
                         </div>
 
                     </div>

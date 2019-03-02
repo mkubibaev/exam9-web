@@ -3,11 +3,16 @@ import './Contact.css';
 
 const Contact = props => {
     return (
-        <div className="contact">
+        <div onClick={props.clicked} className="contact">
             <div className="contact-img">
                 <img src={props.photo} alt={props.name}/>
             </div>
-            <span className="contact-name">{props.name}</span>
+            <div className="contact-text">
+                <span className="contact-name">{props.name}</span>
+                {props.email && <span>email: <strong>{props.email}</strong></span>}
+                {props.phone && <span>phone: <strong>{props.phone}</strong></span>}
+            </div>
+
         </div>
     );
 };
