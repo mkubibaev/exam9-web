@@ -39,11 +39,13 @@ class AddEditContact extends Component {
 
     render() {
         return (
-            <ContactFrom
-                {...this.state.contact}
-                changed={this.valueChanged}
-                submitted={this.submitHandler}
-            />
+            <div className="container">
+                <ContactFrom
+                    {...this.state.contact}
+                    changed={this.valueChanged}
+                    submitted={this.submitHandler}
+                />
+            </div>
         );
     }
 }

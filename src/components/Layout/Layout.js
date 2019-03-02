@@ -5,7 +5,7 @@ const Layout = ({children}) => {
     return (
         <Fragment>
             <Header/>
-            <main className="container py-4">
+            <main className="py-4">
                 {children}
             </main>
         </Fragment>
