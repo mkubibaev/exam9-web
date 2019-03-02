@@ -26,25 +26,27 @@ class Contacts extends Component {
 
         return this.props.loading
             ? <Loader/>
-            : <div className="container">
-                <Modal
-                    show={this.props.selectedContactId}
-                    close={this.props.unselectContact}
-                    contact={this.props.contacts[this.props.selectedContactId]}
-                    removed={() => this.props.removeContact(this.props.selectedContactId)}
-                />
-                <div className="row">
-                    {Object.keys(this.props.contacts).map(id => (
-                        <div key={id} className="col-12 col-lg-4">
-                            <Contact
-                                name={this.props.contacts[id].name}
-                                photo={this.props.contacts[id].photo}
-                                clicked={() => this.props.selectContact(id)}
-                            />
-                        </div>
-                    ))}
+            : this.props.contacts
+                ?<div className="container">
+                    <Modal
+                        show={this.props.selectedContactId}
+                        close={this.props.unselectContact}
+                        contact={this.props.contacts[this.props.selectedContactId]}
+                        removed={() => this.props.removeContact(this.props.selectedContactId)}
+                    />
+                    <div className="row">
+                        {Object.keys(this.props.contacts).map(id => (
+                            <div key={id} className="col-12 col-lg-4">
+                                <Contact
+                                    name={this.props.contacts[id].name}
+                                    photo={this.props.contacts[id].photo}
+                                    clicked={() => this.props.selectContact(id)}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+                : <h3 className="text-center">Empty contact list</h3>
     }
 }
 
