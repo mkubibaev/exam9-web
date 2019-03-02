@@ -6,7 +6,7 @@ const Header = () => {
         <header className="bg-success">
             <nav className="navbar navbar-dark container">
                 <NavLink to="/" className="navbar-brand">Contacts</NavLink>
-                <NavLink to='/new' className="btn btn-light">Add new contact</NavLink>
+                <NavLink to='/add' className="btn btn-light">Add new contact</NavLink>
             </nav>
         </header>
     );
